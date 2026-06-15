@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    mem_limit: 512m
+    restart: unless-stopped
